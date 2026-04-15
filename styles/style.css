@@ -1,1 +1,401 @@
-/* место для вашего кода */
+
+
+header {
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24.3px;
+
+  padding: 40px 0;                
+  margin-top: 54px;
+}
+
+header .container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 50px 53px;             
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  gap: 33px; 
+
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav a:not(:first-child) {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: black;
+}
+
+/* кружок */
+.nav a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -20px;       /* половина gap ктрый 33 */
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 6px;
+  height: 6px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.logo_black{
+  display: block;
+  justify-self: center;
+  width: 136px;
+}
+
+.contacts{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-self: end;
+  gap: 1px;
+  max-width: 240px; 
+
+  font-style: normal;       /* убираем курсив */
+}
+
+.contacts a {
+  position: relative;
+  right: 37px; 
+  color: black;
+  
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: black;
+}
+
+.contacts span {
+  display: block;
+  position: relative;
+  right: 37px; 
+}
+
+/* .menu{} */
+
+.cover{
+  margin-bottom: 180px;
+  position: relative;
+} 
+
+.cover .container {         /* чтобы текст был поверх затемнения */
+  position: relative;
+  padding: 170px 50px 43px;
+
+  background-image: url('../images/cover.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.cover .container::before {              /* затемнение */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+.cover .container > *{
+  position: relative;
+  z-index: 1;
+}
+
+.cover_title {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 115%;
+  letter-spacing: 0.3em;
+  color: white;
+
+  text-transform: uppercase;
+  margin-bottom: 106px;
+  
+}
+
+.title-text {
+  display: block;
+}
+
+.align_left {
+  text-align: left;
+}
+
+.align_center {
+  text-align: center;
+}
+
+.align_right {
+  text-align: right;
+}
+
+.no_letter_spacing {
+  letter-spacing: 0;
+}
+
+.cover_description{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: white;
+  
+  word-spacing: 18px;
+}
+
+.cover_description button {
+  padding: 10px 32px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+
+.lots{
+  margin-bottom: 120px;
+}
+
+ul, ol {
+  list-style: none;     /* наче маркеры могут остаться*/
+}
+
+.lots_title {                 /*заголовок секции лотов*/
+  font-size: 40px;
+  padding: 0 40px 27px; 
+}
+.lots_list {
+  display: flex;
+  gap: 25px;
+}
+
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 334px;
+  min-height: 596px;
+  padding: 48px 40px 46px;
+
+  color: white;
+  text-decoration: none;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.card::before {                 /* затемнение */  
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card_title {                 /* заголовок карточки */
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.card_text {                  /* текст карточки */
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.card_film {                  /* фоны карточек*/
+  background-image: url('../images/card-lot-01.jpg');
+}
+.card_book {
+  background-image: url('../images/card-lot-02.jpg');
+}
+.card_picture {
+  background-image: url('../images/card-lot-03.jpg');
+}
+
+
+
+.lots_more {                /* ссылка "еще лоты" */
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: underline;
+  padding: 0 0 2px 40px;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24.3px;
+  color: rgba(0, 0, 0, 1);
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: black;
+}
+
+
+
+.about{
+  margin: 0 0 157px; 
+}
+
+.about_container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 72px;
+  align-items: start;
+
+  padding: 35px 24px 0 71px;
+
+  
+}
+
+/* круглый логотип */
+.logo-column1 {
+  width: 240px;       
+  height: 240px;
+  background-color: black;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-column1 img {
+  width: 148px;
+  height: 114px;
+}
+
+/* правая колонка */
+.about_column2 {
+   margin: 99px 0 15px;   
+}
+
+.about_title {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 100px;
+}
+
+.about_text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.about_text--padded_rechts {
+  padding-right: 7px;
+}
+
+
+
+.footer {
+  margin-bottom: 100px;
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  /* line-height: 24.3px; */
+}
+
+.footer_container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  padding: 8px 50px;
+}
+
+/* контакты */
+.footer .contacts {
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  padding-left: 36px;
+ 
+  gap: 4px;
+  max-width: 280px;
+}
+
+/* меню */
+.footer_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  text-decoration: none;
+}
+
+.footer_menu a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer_menu a:not(:first-child) {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: black;
+}
+
+/* соцсети */
+.socials {
+  display: flex;
+  justify-self: end;
+  align-self: start;
+  gap: 48px;
+}
+
+.socials img {
+  width: 48px;
+  height: 48px;
+}
+
+
+
+
