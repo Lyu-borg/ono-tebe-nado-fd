@@ -12,4 +12,4 @@
 Открыть index.html в браузере
 
 ## 🌐 GitHub Pages
-https://lyu-borg.github.io/ono-tebe-nado-fd/
+https://github.com/Lyu-borg/ono-tebe-nado-fd
